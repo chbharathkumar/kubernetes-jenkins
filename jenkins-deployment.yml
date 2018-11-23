@@ -12,13 +12,13 @@ spec:
         app: jenkins-ci
    template:
       metadata:
-         name: jenkins
-	 labels:
-	    name: jenkins
-	    app: jenkins-ci
-	 spec:
-	    containers:
-	      - name: jenkins
-	        image: jenkins
-	        ports:
-		  - containerPort: 8080
+        name: jenkins
+	labels:
+	   name: jenkins
+	   app: jenkins-ci
+	spec:
+	   containers:
+	     - name: jenkins
+	       image: jenkins
+	       ports:
+	        - containerPort: 8080
