@@ -14,10 +14,10 @@ spec:
      metadata:
         name: jenkinks
 	labels:
-	   app: jekins-tool
+	   app: jenkins-ci
      spec:
          containers:
-	    - name: jenkins
-	      image: jenkins
-	      ports:
-	        - containerPort: 8080
+	  - name: jenkins
+	    image: jenkins
+	    ports:
+	      - containerPort: 8080
