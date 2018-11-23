@@ -11,14 +11,14 @@ spec:
       matchLabels:
         app: jenkins-ci
    template:
-      metadata:
+     metadata:
         name: jenkins
-	 labels:
+	labels:
 	    name: jenkins
 	    app: jenkins-ci
-	 spec:
-	    containers:
-	      - name: jenkins
-	        image: jenkins
-	        ports:
-	         - containerPort: 8080
+     spec:
+	containers:
+	   - name: jenkins
+	     image: jenkins
+	     ports:
+	       - containerPort: 8080
