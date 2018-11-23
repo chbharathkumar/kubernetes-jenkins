@@ -6,9 +6,9 @@ metadata:
       name: jenkins-service
 spec:
   selector:
-	      name: jenkins
-	      app: jenkins-ci
-	ports:
-	  - port: 8081
-	    nodePort: 30001
-	    targetPort: 8080
+     name: jenkins
+     app: jenkins-ci
+  ports:
+   - port: 8081
+     nodePort: 30001
+     targetPort: 8080
