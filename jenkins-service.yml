@@ -5,10 +5,10 @@ metadata:
    labels:
       name: jenkins-service
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
      name: jenkins
      app: jenkins-ci
   ports:
-   - port: 8081
+   - port: 8080
      targetPort: 8080
