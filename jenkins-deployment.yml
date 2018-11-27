@@ -1,23 +1,28 @@
-apiVersion: apps/v1
+apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-   name: jenkins-depl
-   labels:
-      name: jenkins-depl
-      app: jenkins-tool
+  name: jenkins
 spec:
-   replicas: 1
-   selector:
-      matchLabels:
-        app: jenkins-ci
-   template:
-     metadata:
-        name: jenkinks
-        labels:
-          app: jenkins-ci
-     spec:
-         containers:
-           - name: jenkins
-             image: jenkins
-             ports:
-                - containerPort: 8080
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: jenkins
+    spec:
+      containers:
+        - name: jenkins
+          image: jenkins/jenkins:2.67
+          env:
+            - name: JAVA_OPTS
+              value: -Djenkins.install.runSetupWizard=false
+          ports:
+            - name: http-port
+              containerPort: 8080
+            - name: jnlp-port
+              containerPort: 50000
+          volumeMounts:
+            - name: jenkins-home
+              mountPath: /var/jenkins_home
+      volumes:
+        - name: jenkins-home
+          emptyDir: {}
