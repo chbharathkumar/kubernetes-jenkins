@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+      name: hugo-app-blue-depl
+      labels:
+          name: hugo-app-blue-depl
+         
+spec:
+   template:
+       metadata:
+            name: hugo-app-depl
+            labels:
+              app: hugo-app
+              color: blue
+       spec:
+            containers:
+              - name: hugo-app
+                image: smesch/hugo-app:blue
+   replicas: 3
+   selector:
+      matchLabels:
+          color: blue
