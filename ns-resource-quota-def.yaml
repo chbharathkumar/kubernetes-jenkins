@@ -1,0 +1,14 @@
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pod-limit-demo
+spec:
+  limits:
+   - default:
+       cpu: "0.3"
+       memory: 200Mi
+     defaultRequest:
+       cpu: "0.1"
+       memory: 120Mi
+     type: Container
