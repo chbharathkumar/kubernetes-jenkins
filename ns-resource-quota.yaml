@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: pod-hard-demo
+spec:
+  hard:
+    pods: "2"
+    requests.cpu: "0.5"
+    requests.memory: 1Gi
+    limits.cpu: "1"
+    limits.memory: 2Gi
+   
+---
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: pod-limitmax-demo
+spec:
+  limits:
+   - max:
+       cpu: "500m"
+       memory: 1Gi
+     min:
+       cpu: "300m"
+       memory: 500Mi
