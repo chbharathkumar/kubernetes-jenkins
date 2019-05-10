@@ -5,7 +5,7 @@ metadata:
   name: ns-quota-medium
 spec:
   hard:
-    pods: "10"
+    pods: "60"
     requests.cpu: "0.3"
     requests.memory: 2Gi
     limits.cpu: "0.4"
