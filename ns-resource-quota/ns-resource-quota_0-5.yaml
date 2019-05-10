@@ -5,7 +5,7 @@ metadata:
   name: ns-quota-small
 spec:
   hard:
-    pods: "5"
+    pods: "30"
     requests.cpu: "0.2"
     requests.memory: 1Gi
     limits.cpu: "0.3"
