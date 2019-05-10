@@ -7,10 +7,10 @@ pipeline {
           kubectl create namespace ${Tenant_Name}
             #!/bin/sh
 
-a=Number_of_Micro_services
-b=Replicas
+a=${Number_of_Micro_services}
+b=${Replicas}
 c=2
-d=$((a  b  c))
+d=$((a*b*c))
 echo no of microservices are $d
 if [ $d -ge 1 ] && [ $d -le 30 ] ;
 then
