@@ -5,7 +5,7 @@ pipeline {
         steps{
           sh '''
             kubectl create namespace ${Tenant}
-            kubectl apply -f /root/kubernetes-jenkins/ns-resource-quota/ns-resource-quota_${Micro-services}.yaml --namespace=${Tenant}
+            kubectl apply -f $pwd/ns-resource-quota/ns-resource-quota_${Micro-services}.yaml --namespace=${Tenant}
             kubectl describe ns ${Tenant}
             '''
         }
