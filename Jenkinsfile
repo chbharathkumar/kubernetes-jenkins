@@ -7,7 +7,7 @@ pipeline {
           kubectl create namespace ${Tenant_Name}
             #!/bin/sh
 
-a=No.of_Micro_services
+a=Number_of_Micro_services
 b=Replicas
 c=2
 d=$((a  b  c))
